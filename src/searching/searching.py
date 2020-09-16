@@ -1,13 +1,13 @@
 array1 = [3, 4, 6, 16, 26, 28, 52, 55]
 
 def linear_search(array, target):
-    for i in array:
+    for i in range(len(array)):
         if array[i] == target:
             return i
-        else:
-            return -1  # not found
 
-print(linear_search(array1, 4))
+    return -1  # not found
+
+print(linear_search(array1, 16))
 # Write an iterative implementation of Binary Search
 # takes a sorted array and a target as input
 # returns the index of the target in the array if exists
@@ -16,7 +16,7 @@ def binary_search(arr, target):
     # find the midpoint element
     # length /2
     left = 0
-    right = len(arr)
+    right = len(arr) - 1
 
     # keep iterating while the left is < or equal to right
     while left <= right:
@@ -36,3 +36,4 @@ def binary_search(arr, target):
 
 print(binary_search(array1, 52))
 print(binary_search(array1, 26))
+print(binary_search(array1, 100))
